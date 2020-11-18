@@ -1,5 +1,4 @@
 var currentTime;
-console.log('233');
 
 // function to displayTime
 setInterval(getTime, 1000);
@@ -166,6 +165,7 @@ function calcAlarm(hr, min) {
     var currentTime = new Date();
     var sH = currentTime.getHours();
     var sM = currentTime.getMinutes();
+    var sT = currentTime.getTime();
     var xPlay = document.getElementById('myAudio');
 
     // calculate selected hour and converts it to minute.
@@ -180,6 +180,9 @@ function calcAlarm(hr, min) {
     // which is then converted to seconds, then to milliseconds.
     var td = (gg + currentTime.setMinutes(min)) - sM;
     tr = new Date(td);
+    tv = tr.getTime();
+    console.log(tv);
+
     tx = (gg + tr.getMinutes()) - sM;
     ts = tx * 60;
     tl = ts - currentTime.getSeconds();
@@ -188,14 +191,16 @@ function calcAlarm(hr, min) {
     console.log(ts);
 
     // function to countdown alarm in milliseconds and plays music when time is up.
-    var emma = setTimeout((trt) => {
-        xPlay.play();
-        // alert('WORKING');
-        // prompt('WORKING');
+    var emma = setTimeout(() => {
+        if (tv > sT) {
+            xPlay.play();
+        } else {
+            alert('Time has passed. Enter a valid time')
+        }
     }, tms);
 
     // function to countdown total seconds of alarm.
-    var mt = setInterval((stt) => {
+    var mt = setInterval(() => {
         tl--;
         console.log(tl);
 
