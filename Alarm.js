@@ -204,14 +204,17 @@ function calcAlarm(hr, min) {
         tl--;
         console.log(tl);
 
+        let snzid = document.getElementById('snzid')
         let bttn2 = document.getElementById('btn2');
         // condition to clearInterval when countdown reaches Zero(0).
         if (tl == 0) {
             clearInterval(mt)
             bttn2.disabled = false;
+            snzid.disabled = false;
         } else {
             tl = tl;
             bttn2.disabled = true;
+            snzid.disabled = true;
         }
 
     }, 1000);
