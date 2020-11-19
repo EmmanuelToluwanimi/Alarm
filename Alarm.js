@@ -209,23 +209,21 @@ function calcAlarm(hr, min) {
         // condition to clearInterval when countdown reaches Zero(0).
         if (tl == 0) {
             clearInterval(mt)
-            bttn2.disabled = false;
-            snzid.disabled = false;
+            // bttn2.disabled = false;
+            // snzid.disabled = false;
         } else {
             tl = tl;
-            bttn2.disabled = true;
-            snzid.disabled = true;
+            // bttn2.disabled = true;
+            // snzid.disabled = true;
         }
 
     }, 1000);
-
-    // calls countdown function
-    // xyz();
 
     // displays stop alarm and snooze btn
     document.getElementById('btn1').style.display = 'inline-block';
     document.getElementById('btn2').style.display = 'inline-block';
     document.getElementById('btn0').style.display = 'none';
+    document.getElementById('col4').style.display = 'block';
 
     // stopalarm function
     document.getElementById('btn1').addEventListener('click', stopAlarm)
@@ -235,9 +233,10 @@ function calcAlarm(hr, min) {
         clearInterval(mt);
         xPlay.pause();
         // displays stop alarm and snooze btn
-        document.getElementById('btn1').style.display = 'none';
-        document.getElementById('btn2').style.display = 'none';
+        // document.getElementById('btn1').style.display = 'none';
+        // document.getElementById('btn2').style.display = 'none';
         document.getElementById('btn0').style.display = 'block';
+        document.getElementById('col4').style.display = 'none';
     }
 }
 
@@ -245,18 +244,6 @@ function calcAlarm(hr, min) {
 function xyz(sHou, sMinut) {
     let jkl = document.getElementById('countD');
     jkl.style.display = "block";
-
-    // // get the selected value of hour and parsed into an Integer.
-    // var sHou = document.getElementById('selectHour');
-    // rt = sHou.selectedIndex;
-    // sHou = parseInt(sHou.options[xy].text);
-    // console.log(sHou);
-
-    // // get the selected value of minute and parsed into an Integer.
-    // var sMinut = document.getElementById('selectMinute');
-    // ry = sMinut.selectedIndex;
-    // sMinut = parseInt(sMinut.options[yz].text);
-    // console.log(sMinut);
 
     let dt = new Date();
     let sh = dt.setHours(sHou);
