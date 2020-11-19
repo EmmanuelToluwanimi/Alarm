@@ -232,12 +232,10 @@ function calcAlarm(hr, min) {
 
     }, 1000);
 
-    // displays stop alarm and snooze btn
-    // document.getElementById('btn1').style.display = 'inline-block';
-    // document.getElementById('btn2').style.display = 'inline-block';
+    // Hides the set alarm button.
     document.getElementById('btn0').style.display = 'none';
     
-    // document.getElementById('btn3').style.display = 'none';
+    
 
     // stopalarm function
     document.getElementById('btn1').addEventListener('click', stopAlarm)
