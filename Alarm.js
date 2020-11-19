@@ -130,6 +130,13 @@ function getAlarm() {
     xyz(sHour, sMinute);
 }
 
+function getSnzo() {
+    var snze = document.getElementById('snzid');
+    snze.style.display = 'block';
+
+    document.getElementById('btn2').style.display = 'none';
+    document.getElementById('btn3').style.display = 'inline-block';
+}
 // snooze function
 function getSnooze() {
     var currentTime = new Date();
@@ -151,13 +158,18 @@ function getSnooze() {
     var bb = bol.getHours();
     var bn = bol.getMinutes();
 
+
+    document.getElementById('btn2').style.display = 'none'; 
     xPlay.pause();
+
+    getSnzo();
 
     // sends hour and minute value as a parameter, which is then calculated.
     calcAlarm(bb, bn);
 
     // sends hour and minute value as a parameter for countdown.
     xyz(bb, bn);
+
 }
 
 // function that gets hrs and mins as a parameter and operates them.
@@ -194,6 +206,7 @@ function calcAlarm(hr, min) {
     var emma = setTimeout(() => {
         if (tv > sT) {
             xPlay.play();
+            document.getElementById('col4').style.display = 'block';
         } else {
             alert('Time has passed. Enter a valid time')
         }
@@ -220,10 +233,11 @@ function calcAlarm(hr, min) {
     }, 1000);
 
     // displays stop alarm and snooze btn
-    document.getElementById('btn1').style.display = 'inline-block';
-    document.getElementById('btn2').style.display = 'inline-block';
+    // document.getElementById('btn1').style.display = 'inline-block';
+    // document.getElementById('btn2').style.display = 'inline-block';
     document.getElementById('btn0').style.display = 'none';
-    document.getElementById('col4').style.display = 'block';
+    
+    // document.getElementById('btn3').style.display = 'none';
 
     // stopalarm function
     document.getElementById('btn1').addEventListener('click', stopAlarm)
@@ -236,7 +250,7 @@ function calcAlarm(hr, min) {
         // document.getElementById('btn1').style.display = 'none';
         // document.getElementById('btn2').style.display = 'none';
         document.getElementById('btn0').style.display = 'block';
-        document.getElementById('col4').style.display = 'none';
+        document.getElementById('col4').style.display = 'none ';
     }
 }
 

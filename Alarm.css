@@ -60,8 +60,11 @@ body {
 .selecto {
     width: 100px;
 }
+#snzid{
+    display: none;
+}
 
-.btn-danger, .btn-warning {
+.btn-success{
     display: none;
 }
 
