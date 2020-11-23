@@ -159,7 +159,7 @@ function getSnooze() {
     var bn = bol.getMinutes();
 
 
-    document.getElementById('btn2').style.display = 'none'; 
+    document.getElementById('btn2').style.display = 'none';
     xPlay.pause();
 
     getSnzo();
@@ -217,23 +217,19 @@ function calcAlarm(hr, min) {
         tl--;
         console.log(tl);
 
-        let snzid = document.getElementById('snzid')
-        let bttn2 = document.getElementById('btn2');
         // condition to clearInterval when countdown reaches Zero(0).
         if (tl == 0) {
             clearInterval(mt)
-            
         } else {
             tl = tl;
-            
         }
 
     }, 1000);
 
     // Hides the set alarm button.
     document.getElementById('btn0').style.display = 'none';
-    
-    
+
+
 
     // stopalarm function
     document.getElementById('btn1').addEventListener('click', stopAlarm)
@@ -276,6 +272,7 @@ function xyz(sHou, sMinut) {
             seconds = 0;
         }
 
+        //Display format for countDown.
         jkl.innerHTML = `${hours}h : ${minutes}m : ${seconds}s `;
 
     }, 1000);
