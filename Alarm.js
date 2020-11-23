@@ -222,12 +222,10 @@ function calcAlarm(hr, min) {
         // condition to clearInterval when countdown reaches Zero(0).
         if (tl == 0) {
             clearInterval(mt)
-            // bttn2.disabled = false;
-            // snzid.disabled = false;
+            
         } else {
             tl = tl;
-            // bttn2.disabled = true;
-            // snzid.disabled = true;
+            
         }
 
     }, 1000);
